@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.ensemble import IsolationForest
-from texttable import Texttable
+# from texttable import Texttable
 import streamlit as st
 import joblib
 import time
@@ -80,7 +80,7 @@ class docker_anomaly:
 
 
 if __name__ == '__main__':
-    f_path = r".\conn_attack.csv"
+    f_path = r"conn_attack.csv"
     '''
     record ID - The unique identifier for each connection record.
     duration_  This feature denotes the number of seconds (rounded) of the connection. For example, a connection for 0.17s or 0.3s would be indicated with a “0” in this field.
@@ -88,7 +88,8 @@ if __name__ == '__main__':
     dst_bytes This fea
     ture represents the number of data bytes transferred from the destination to the source (i.e., the amount of bytes received by the host).
     '''
+    # data = pd.read_csv(f_path, names=["record ID", "duration_", "src_bytes", "dst_bytes"], header=None)
     docker_anomaly_UI = docker_anomaly(f_path)
-    # docker_anomaly_UI.create_model()
-    # docker_anomaly_UI.save_model()
+    # # docker_anomaly_UI.create_model()
+    # # docker_anomaly_UI.save_model()
     docker_anomaly_UI.main()
