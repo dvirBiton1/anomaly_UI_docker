@@ -1,0 +1,6 @@
+pandas
+sklearn
+texttable
+joblib
+scikit-learn
+streamlit
